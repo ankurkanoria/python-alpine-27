@@ -87,7 +87,8 @@ RUN set -ex \
 	)" \
 	&& apk add --virtual .python-rundeps $runDeps \
 	&& apk del .build-deps \
-	&& rm -rf /usr/src/python ~/.cache
-    && mkdir -p /opt && ln -s /usr/local/bin /opt/bin
+	&& rm -rf /usr/src/python ~/.cache \
+	&& mkdir -p /opt \
+	&& ln -s /usr/local/bin /opt/bin
 
 CMD ["python2"]
